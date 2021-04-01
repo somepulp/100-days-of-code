@@ -34,9 +34,9 @@ if isLeft == True:
         if door_choice.lower() == "red" or door_choice.lower() == "blue":
             print("You have been eaten by a hungry lion behind the door you selected. Poor form! ")
         elif door_choice.lower() != "red" and door_choice.lower() != "blue" and door_choice.lower() != "yellow":
-            print('You dumb, or you mistyped. Please select an appropriate answer, when you try again. Dumbass.')
+            print('You dumb, or you mistyped. Please select an appropriate answer, when you try again.')
         else: 
-            print("You won a whopping treasure of shit. Congrats! ")
+            print("You won a whopping treasure of poop. Congrats! ;)")
             print('''
               (   )
             (   ) (
