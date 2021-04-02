@@ -56,4 +56,4 @@ Back to random numbers, we can return random floating point numbers using the mo
 This will generate a floating point number between 0 and 1
 
 How do we create a random decimal number between 0 and 5?
-* just multiply your random floating number between 0 and 1, by 5. This will include:  $x \in {0,5}$ *(not inclusive)*
+* just multiply your random floating number between 0 and 1, by 5. This will include numbers between 0 and 5 *(not inclusive)*
