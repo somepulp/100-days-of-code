@@ -24,3 +24,30 @@ Sample functions to use:
 random.randint(a,b)
 ```
 - this generates a random integer between a and b (inclusive)
+
+_________
+
+Hold up, wait a minute!
+We've just been introduced to modules. So, what is a module?
+
+![Alt Text](https://media.giphy.com/media/aWU9OI9oxxwGc/giphy.gif)
+
+<!-- <img src="https://media.giphy.com/media/aWU9OI9oxxwGc/giphy.gif" width="250">
+-->
+Welll
+
+At times code gets really complicated and it gets harder to understand what your code is doing in a very long script. 
+A solution is to split up  the code into individual modules where each module is responsible for different functionalities within your program.
+For complex projects with many modules, this segmentation enables you to collaborate easier with others as different people could be working on different functionalities separately. 
+
+So a module is a collection of code/functions that accomplish a specific goal or provide a specific functionality that can be used or slotted into other bodies of code. 
+
+Essentially, its functional-piece-wise code. 
+
+How can we create our own modules? 
+It's as easy as creating other .py files and importing it into another script (in the same folder/location)
+
+We'll create a module which contains some digits of pi, called `pi_module.py`. Since this is saved in the same location as our main script `day4.py`, we can run the following code to use our *module*:
+```
+import pi_module
+```
