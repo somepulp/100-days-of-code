@@ -57,3 +57,46 @@ This will generate a floating point number between 0 and 1
 
 How do we create a random decimal number between 0 and 5?
 * just multiply your random floating number between 0 and 1, by 5. This will include numbers between 0 and 5 *(not inclusive)*
+
+----
+## Lists
+
+Lists are just one of the ways to organize and store data (data structure)
+- good for grouped pieces of data, which have a connection with each other.
+- ex: storing names of states - they 'belong' together, so might want to store this is one variable
+
+Lists are just a set of *square brackets*, separated by commas:
+```
+fruits = ["banana", "orange"]
+```
+
+Within lists, we can have different data types, i.e a list can contain booleans, integers, strings, floats, at the same time.
+
+Ordering within the list is important as items can be extracted based on their position in the list. 
+*Note*: zero-indexing applies to lists as well (previously we saw this when extracting characters from strings)
+
+In addition to positive indexing, we can also use negative indexes. We start with -1 as the last item in the list (-0 means nothing in math).
+
+Lists are also **mutable**. 
+
+We can change items in the lists through indexing as follows:
+```
+states_of_america[1] = "Alaska"
+```
+
+This would keep the other items in the list the same, but replace *Pennsylvania* with *Alaska*.
+
+
+We can also add items into the list using the *append* function: 
+```
+states_of_america.append("Arkansas")
+```
+This will add "Arkansas" to the end of our `states_of_america` list. 
+
+We can extend a list (add another list to the end of it) by using the *extend* function: 
+```
+states_of_america.extend(["Minnesota", "California"])
+```
+
+Other lists functions are included in the python documentation [here](https://docs.python.org/3/tutorial/datastructures.html).
+
