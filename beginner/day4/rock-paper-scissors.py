@@ -29,15 +29,17 @@ scissors = '''
       (____)
 ---.__(___)
 '''
-choice_list = [["rock", "paper", "scissors"],[rock, paper, scissors]]
+choice_list = [["Rock", "Paper", "Scissors"],[rock, paper, scissors]]
 
 print("Welcome to the rock-paper-scissors game. Please select a number choice: \n 0 = Rock\n 1 = Paper\n 2 = Scissors")
-player_num = int(input("What do you choose? "))
+#player_num = int(input("What do you choose? "))
+#testing
+player_num = random.randint(0,2)
 player_choice = choice_list[0][player_num]
 player_ascii = choice_list[1][player_num]
 
 #Error checking
-if(player_choice > 2):
+if(player_num > 2):
     print("You have selected an invalid number. Please select 0 for Rock, 1 for Paper, or 2 for Scissors")
 else:
     computer_num = random.randint(0,2)
@@ -47,6 +49,14 @@ else:
     # scissors beats paper (2 beats 1 - 2>1)
     # rock beats scissors (0 beats 2 - 0 < 2 )
     if computer_num == player_num:
-        print(player_ascii)
-        print(f"The computer chose:\n{computer_ascii}")
+        print(f"You chose {player_choice} \n{player_ascii}")
+        print(f"The computer chose {computer_choice} \n{computer_ascii}")
         print("Issa tieeee!")
+    elif (player_num !=0 and computer_num > player_num) or (computer_num == 0 and player_num == 2):
+        print(f"You chose {player_choice} \n{player_ascii}")
+        print(f"The computer chose {computer_choice} \n{computer_ascii}")
+        print("You lose!")
+    else:
+        print(f"You chose {player_choice} \n{player_ascii}")
+        print(f"The computer chose {computer_choice} \n{computer_ascii}")
+        print("You win!")
