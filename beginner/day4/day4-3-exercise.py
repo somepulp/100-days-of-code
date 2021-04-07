@@ -13,11 +13,17 @@ print(f"{row1}\n{row2}\n{row3}")
 position = input("Where do you want to put the treasure? ")
 
 ##Solution
-#conversions to remove whitespace
-col_num = int(str(int(position))[0])
-row_num = int(str(int(position))[1])
-if(col_num < 1 or col_num > len(row1) or row_num < 1 or row_num > len(map)):
-    print("Invalid coordinates. Please select co-ordinates that exist on the map.\nNote: the first box is at coordinate (1,1)")
+#remove whitespace
+position = position.replace(" ","")
+
+#if they dont enter a 2 digit number, ask them to retry
+if(len(position)<2):
+    print("You have entered an invalid amount of coordinates!😣\nPlease ensure to select two digits which correspond to the column and row you would like to place the treasure on.")
 else:
-    map[row_num-1][col_num-1] = '❌'
-    print(f"{map[0]}\n{map[1]}\n{map[2]}")
+    col_num = int(position[0])
+    row_num = int(position[1])
+    if(col_num < 1 or col_num > len(row1) or row_num < 1 or row_num > len(map)):
+        print("Invalid coordinates. Please select co-ordinates that exist on the map.\nNote: the first box is at coordinate (1,1)")
+    else:
+        map[row_num-1][col_num-1] = '❌'
+        print(f"{map[0]}\n{map[1]}\n{map[2]}")
