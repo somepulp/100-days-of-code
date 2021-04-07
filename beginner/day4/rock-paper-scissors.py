@@ -32,9 +32,7 @@ scissors = '''
 choice_list = [["Rock", "Paper", "Scissors"],[rock, paper, scissors]]
 
 print("Welcome to the rock-paper-scissors game. Please select a number choice: \n 0 = Rock\n 1 = Paper\n 2 = Scissors")
-#player_num = int(input("What do you choose? "))
-#testing
-player_num = random.randint(0,2)
+player_num = int(input("What do you choose? "))
 player_choice = choice_list[0][player_num]
 player_ascii = choice_list[1][player_num]
 
