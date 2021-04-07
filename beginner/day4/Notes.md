@@ -100,3 +100,20 @@ states_of_america.extend(["Minnesota", "California"])
 
 Other lists functions are included in the python documentation [here](https://docs.python.org/3/tutorial/datastructures.html).
 
+For exercise 2, we can simplify the solution by using the choice method from the random module:
+```
+selected_culprit = random.choice(names)
+print(f"{selected_culprit} is responsible for the bill today!")
+```
+
+### IndexErrors and Working with Nested Lists
+
+The index *out of range* error pops up when one tries to extract an item from a non-existent index position. This usually occurs when we forget that indexing starts from 0, not 1. 
+
+#### Nested Lists
+```
+fruits = [...]
+vegetables = [...]
+both = [fruits,vegetables]
+```
+- both is a list of lists 
