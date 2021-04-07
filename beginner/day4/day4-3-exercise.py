@@ -20,4 +20,4 @@ if(first_digit < 1 or first_digit > len(row1) or second_digit<1 or second_digit>
     print("Invalid coordinates. Please select co-ordinates that exist on the map.\nNote: the first box is at coordinate (1,1)")
 else:
     map[second_digit-1][first_digit-1] = '❌'
-    print(f"{row1}\n{row2}\n{row3}")
+    print(f"{map[0]}\n{map[1]}\n{map[2]}")
