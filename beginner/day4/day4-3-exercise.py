@@ -14,10 +14,10 @@ position = input("Where do you want to put the treasure? ")
 
 ##Solution
 #conversions to remove whitespace
-first_digit = int(str(int(position))[0])
-second_digit = int(str(int(position))[1])
-if(first_digit < 1 or first_digit > len(row1) or second_digit<1 or second_digit>len(map)):
+col_num = int(str(int(position))[0])
+row_num = int(str(int(position))[1])
+if(col_num < 1 or col_num > len(row1) or row_num < 1 or row_num > len(map)):
     print("Invalid coordinates. Please select co-ordinates that exist on the map.\nNote: the first box is at coordinate (1,1)")
 else:
-    map[second_digit-1][first_digit-1] = '❌'
+    map[row_num-1][col_num-1] = '❌'
     print(f"{map[0]}\n{map[1]}\n{map[2]}")
