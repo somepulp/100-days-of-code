@@ -40,7 +40,15 @@ print("Here is your password: " + final_password)
 # or can try to randomize each position, based on the number of character of each item left..
 
 # easier: shuffling characters
-final_pw_list = list(final_password)
+#final_pw_list = list(final_password)
+password_length = len(final_password)
+old_password = final_password
+new_password = ""
+for i in range(password_length):
+    pl = len(final_password)
+    random_index = random.randint(0, pl-1)
+    selected_character = final_password[random_index]
+    new_password += selected_character
+    final_password = final_password.replace(selected_character, "",1)
 
-index_list = range()
-for i in final_pw_list:
+print("Here is your password, randomized: " + new_password)
