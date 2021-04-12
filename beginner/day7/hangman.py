@@ -1,14 +1,11 @@
-# Importing packages: 
+# Importing modules: 
 import random
-import hangman_art as art
-import hangman_words as words
-
-# importing ascii art
-stages = art.stages
-logo = art.logo
+#import ascii art 
+from hangman_art import stages, logo
+#import words list 
+from hangman_words import word_list
 
 # initializing variables 
-word_list = words.word_list
 chosen_word = random.choice(word_list) 
 word_length = len(chosen_word)
 end_of_game = False
@@ -16,9 +13,6 @@ lives = len(stages) - 1
 
 # Printing logo at the start of the game
 print(logo)
-
-#Testing code
-print(f'Pssst, the solution is {chosen_word}.')
 
 # Create blanks
 display = []
@@ -38,17 +32,14 @@ while not end_of_game:
         # if lives goes down to 0, the game is over
         if lives == 0:
             end_of_game = True
-            print("You have no more lives. You lose.")
+            print(f"You have no more lives. You lose.\nThe word was {chosen_word}")
     # if they find a letter in the chosen_word
     else:
         # Replace blanks with letter if guess is found 
         for i in range(word_length):
             if guess == chosen_word[i]:
                 display[i] = guess
-    
-    #TODO-2: - If guess is not a letter in the chosen_word,
-    #Then reduce 'lives' by 1. 
-    #If lives goes down to 0 then the game should stop and it should print "You lose."
+
     
     #Join all the elements in the list and turn it into a String.
     print(f"{' '.join(display)}")
@@ -59,5 +50,5 @@ while not end_of_game:
         end_of_game = True
         print("You won!")
     
-    #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
+    #print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
     print(stages[lives])
