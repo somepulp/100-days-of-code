@@ -17,8 +17,8 @@ for c in range(word_length):
 #          guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). 
 #          Then you can tell the user they've won.
 
-letters_guessed = 0
-while letters_guessed < word_length:
+end_of_game = False
+while not end_of_game:
     # user guess, converted to lower case
     guess = input("Guess a letter: ").lower()
     # if they have already guessed the letter, tell them to try again. if not, perform checks
@@ -29,9 +29,9 @@ while letters_guessed < word_length:
         for i in range(word_length):
             if guess == chosen_word[i]:
                 display[i] = guess
-                letters_guessed +=1
     
     print(display)
-
-if "_" not in display:
-    print("You won!")
+    
+    if "_" not in display:
+        end_of_game = True
+        print("You won!")
