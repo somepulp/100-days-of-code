@@ -14,7 +14,7 @@ print(f'Pssst, the solution is {chosen_word}.')
 #So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
 
 display = []
-for letter in chosen_word: 
+for c in range(len(chosen_word)): 
     display += "_"
 
 # Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
@@ -23,7 +23,7 @@ guess = input("Guess a letter: ").lower()
 #TODO-2: - Loop through each position in the chosen_word;
 #If the letter at that position matches 'guess' then reveal that letter in the display at that position.
 #e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
-for i in range(0, len(chosen_word)):
+for i in range(len(chosen_word)):
     if guess == chosen_word[i]:
         display[i] = guess
     else:
