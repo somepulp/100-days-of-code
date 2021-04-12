@@ -65,6 +65,7 @@ word_length = len(chosen_word)
 
 #TODO-1: - Create a variable called 'lives' to keep track of the number of lives left. 
 #Set 'lives' to equal 6.
+lives = len(stages) - 1
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
@@ -79,7 +80,12 @@ while not end_of_game:
     guess = input("Guess a letter: ").lower()
     # if they have already guessed the letter, tell them to try again. if not, perform checks
     if guess in display:
-        print(f"Guess another letter, you already tried {guess}! ")
+        print(f"Guess another letter, you already found {guess}! ")
+    elif guess not in chosen_word: 
+        lives -=1 
+        if lives == 0:
+            end_of_game = True
+            print("You have no more lives. You lose.")
     else:
         # Replace blanks with letter if guess is found 
         for i in range(word_length):
@@ -93,10 +99,11 @@ while not end_of_game:
     #Join all the elements in the list and turn it into a String.
     print(f"{' '.join(display)}")
     
-    print(display)
+    #print(display)
 
     if "_" not in display:
         end_of_game = True
         print("You won!")
     
-      #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
+    #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
+    print(stages[lives])
