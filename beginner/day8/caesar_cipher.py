@@ -8,12 +8,6 @@ from art import logo
 #- while loop - to allow the user ot continue -- while continue = yes.. continue.. 
 #- need two alphabets? one is the original, one is the shifted.. they both should have the same length.. - not needed..
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
 def caesar(text, shift, direction):
         if not (direction == "encode" or direction == "decode"):
             print("I dont know what you want to do. Select either 'encode' or 'decode' for the direction ")
@@ -29,6 +23,13 @@ def caesar(text, shift, direction):
                 new_text += alphabet[(position + modulo_shift) % 26]
                 
             print(f"The {direction}d text is {new_text}")
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
 
 #TODO-1: Import and print the logo from art.py when the program starts.
 print(logo)
