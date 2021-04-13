@@ -37,3 +37,7 @@ elif direction == "decode":
     decrypt(text, shift)
 else: 
     print("I dont know what you want to do. Type either 'encode' or 'decode' ")
+
+
+#TODO-1: Combine the encrypt() and decrypt() functions into a single function called caesar().
+#TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
