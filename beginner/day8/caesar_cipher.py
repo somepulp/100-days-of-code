@@ -21,8 +21,8 @@ shift = int(input("Type the shift number:\n"))
 def encrypt(text, shift):
     cipher_text = ""
     for letter in text:
-        cipher_text += alphabet[(alphabet.index(letter)) % 26 + shift]
+        cipher_text += alphabet[(alphabet.index(letter)) + (shift % 26)]
     print(f"The encoded text is {cipher_text}")
      #🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
 
-encrypt("hello", 5)
+encrypt("hello", 1)
