@@ -97,5 +97,6 @@ Note that when we call a function which expects inputs, we have to understand tw
 
 
 Also note: the position of arguments matter, unless you explicitly associate the arguments with the parameter like so: 
+
 ```weather_check(night=FALSE, city="Caledon")```
 
