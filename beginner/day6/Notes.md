@@ -73,3 +73,29 @@ While loops can create *infinite loops* if the condition never becomes False. Th
 Therefore, you must be careful when creating a while loop to ensure that you have an appropriate condition which is not always True. 
 If you dont know why you have an infinite loop, print out your condition at each iteration to see whether it can even change. 
 
+__________
+## Functions With Inputs
+To create a function that depends on inputs from the user, all you need to do is include parameters in the function definition, like so:
+```
+def my_function(parameter):
+    Do something with parameter
+    Do something else
+    etc...
+```
+
+You can include as many parameters as you want. Also you can make certain parameters default to a certain value, if the user does not input anything:
+
+``` 
+def weather_check(city, night = FALSE):
+    #check city weather on website, when it is not night
+    #if night = TRUE, check city weather on website for nighttime 
+```
+
+Note that when we call a function which expects inputs, we have to understand two concepts:
+- parameters: the name of the inputs that the function expects. In our previous function, the parameters are `city` and `night`
+- arguments: the actual value being passed to the function when it's being called. 
+
+
+Also note: the position of arguments matter, unless you explicitly associate the arguments with the parameter like so: 
+```weather_check(night=FALSE, city="Caledon")```
+
