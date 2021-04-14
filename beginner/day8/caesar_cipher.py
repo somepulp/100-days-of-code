@@ -19,8 +19,8 @@ def caesar(text, shift, direction):
                 modulo_shift *= -1
             
             for letter in text:
-                if letter == " ":
-                    new_text += " "
+                if not letter in alphabet:
+                    new_text += letter
                 else: 
                     position = alphabet.index(letter)
                     new_text += alphabet[(position + modulo_shift) % 26]
@@ -42,4 +42,6 @@ while not again == "no":
     caesar(text = text, shift = shift, direction = direction)
 
     again = input("Do you want to go again? Type 'yes' or 'no': ")
+    if again == "no":
+        print("Bye-bye!")
 
