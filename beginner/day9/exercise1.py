@@ -15,11 +15,12 @@ student_scores = {
 student_grades = {}
 
 for student in student_scores:
-     if student_scores[student] > 90:
+     score = student_scores[student]
+     if score > 90:
           student_grades[student] = "Outstanding"
-     elif student_scores[student] > 80:
+     elif score > 80:
           student_grades[student] = "Exceeds Expectations"
-     elif student_scores[student] > 70:
+     elif score > 70:
           student_grades[student] = "Acceptable"
      else: 
           student_grades[student] = "Fail"
