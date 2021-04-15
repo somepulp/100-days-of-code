@@ -78,3 +78,74 @@ Value1
 Value2
 This is a new key
 ```
+
+## Nesting 
+
+We've seen simple dictionaries, but we can get crazy by making a list or even another dictionary, the value in a dictionary...
+
+![Giirl, my brain hurts](https://media.giphy.com/media/12yo8lScM5oOI0/giphy.gif)
+
+.....wooosahhhh, or whatever beyonce said
+
+![Beyonce](https://media.giphy.com/media/ZBMXbtsbZR5f2/giphy.gif)
+
+<!-- ![oprah_tears](https://media.giphy.com/media/6BNXHG8PeS1xK/giphy.gif)>
+<!--![Maan](https://media.giphy.com/media/cmkaW3yTFJ075TwT9o/giphy.gif) -->
+<!-- ![](https://media.giphy.com/media/cmkaW3yTFJ075TwT9o/giphy.gif) --> 
+
+This is what nesting is! 
+
+```
+{
+     Key: [List]
+     Key2: {Dict}
+}
+```
+Its more complex, but we are granted more flexibility when storing our data. 
+
+We can nest data as follows:
+
+### 1. List in a dictionary
+
+```
+#travel log of cities you've been in each country:
+travel_log = {
+     "France":["Paris", "Lille", "Dijon"],
+     "Germany": ["Berlin", "Hamburg", "Stuttgart"]
+}
+```
+
+### 2. Dictionary in a dictionary
+```
+travel_log = {
+     "France":{
+          "cities_visited":["Paris", "Lille", "Dijon"],
+          "total_visits": [4,2,2]
+     },
+     "Germany": {
+          "cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+          "total_visits": 2
+     }
+}
+
+```
+
+### 3. Dictionary within a list 
+```
+travel_log = [
+     {
+          "country": "France",
+          "cities_visited": ["Paris", "Lille", "Dijon"],
+          "total_visits": [4,2,2]
+     },
+     {
+          "country": "Germany",
+          "cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+          "total_visits": 2
+     }
+]
+
+#Extract France:
+travel_log[0]['country']
+
+```
