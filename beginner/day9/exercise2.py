@@ -15,12 +15,12 @@ travel_log = [
 },
 ]
 
-def add_new_country(country, visits, cities_list):
-     new_dict = {
-          'country': country,
-          'visits': visits,
-          'cities': cities_list
-     }
+def add_new_country(country_visited, times_visited, cities_visited):
+     new_dict = {}
+     new_dict['country'] = country_visited,
+     new_dict['visits'] = times_visited,
+     new_dict['cities'] = cities_visited
+
      travel_log.append(new_dict)
 
 add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
