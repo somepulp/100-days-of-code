@@ -14,3 +14,8 @@ def my_function():
      """ This function will take no inputs, and produce the sum of 2 and 5"""
      return 2+5
 ```
+
+Back to the question about printing vs return:
+Yes, first guess is right. You cannot save the output of a function in a variable to use elsewhere, if the function does not return something, or if it prints the output. 
+
+
