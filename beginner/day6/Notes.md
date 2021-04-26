@@ -100,3 +100,17 @@ Also note: the position of arguments matter, unless you explicitly associate the
 
 ```weather_check(night=FALSE, city="Caledon")```
 
+## Functions with Outputs
+
+```
+def my_function():
+    result = 3*2
+    return result
+```
+When the function is called, the result will be shown, and it can be assigned to another variable like so: 
+`output = my_function()`
+
+Note, the return keyword signifies the end of the function, and no code on lines below the return statement get executed when the function is called. 
+
+Can use early return statements to stop the function in case invalid inputs are provided. This allows early exit from the function if there is an error. 
+
