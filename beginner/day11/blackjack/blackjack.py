@@ -22,9 +22,12 @@ def run_blackjack():
     user_card_list = []
     computer_card_list = []
     game_continue = True
+    user_blackjack = False
+    computer_blackjack = False
+
     messages = {
-        'computer_blackjack': "You lose, the computer has a total of 21!",
-        'user_blackjack': "You won, you got a total of 21!",
+        'computer_blackjack': "You lose, the computer has a BlackJack!",
+        'user_blackjack': "BlackJack! You won!",
         'user_over_21': "You went over. You lose!",
         'computer_over_21': "You won, because the computer went over 21!",
         'draw': "It's a draw ;)",
@@ -48,16 +51,16 @@ def run_blackjack():
     def find_winner(user_list, computer_list):
         computer_total = sum(computer_list)
         user_total = sum(user_list)
-        if computer_total == 21:
+        if computer_blackjack:
             print(messages['computer_blackjack'])
-        elif user_total == 21:
+        elif user_blackjack:
             print(messages['user_blackjack'])
         elif user_total > 21:
             print(messages['user_over_21'])
-        elif user_total == computer_total:
-            print(messages['draw'])
         elif computer_total > 21:
             print(messages['computer_over_21'])
+        elif user_total == computer_total:
+            print(messages['draw'])
         elif user_total > computer_total:
             print(messages['user_win'])
         else:
@@ -71,7 +74,10 @@ def run_blackjack():
         print(f"Your cards: {user_card_list}, current score: {sum(user_card_list)}")
         print(f"Computer's first card: {computer_card_list[0]}")
 
-        if sum(user_card_list) > 21:
+        if (len(user_card_list) == 2 and sum(user_card_list) == 21):
+            game_continue = False
+            user_blackjack = True
+        elif sum(user_card_list) > 21:
             game_continue = False
         else:
             draw_again = input("Type 'y' to get another card, type 'n' to pass: ")
@@ -84,11 +90,14 @@ def run_blackjack():
     user_total = sum(user_card_list)
     #play computer once user selection stops
     computer_total = sum(computer_card_list)
-    while computer_total <= 16:
-        deal_card(player_list = computer_card_list)
-        replace_ace(player_list = computer_card_list)
-        computer_total = sum(computer_card_list)
-    
+    if (len(computer_card_list) == 2 and computer_total == 21):
+        computer_blackjack = True
+    else:
+        while computer_total <= 16:
+            deal_card(player_list = computer_card_list)
+            replace_ace(player_list = computer_card_list)
+            computer_total = sum(computer_card_list)
+        
     print(f"Your final hand: {user_card_list}, final score: {user_total}")
     print(f"Computer's final hand: {computer_card_list}. final score: {computer_total}")
 
