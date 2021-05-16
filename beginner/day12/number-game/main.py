@@ -4,7 +4,7 @@ import random
 
 def computer_whisperer():
      print(logo)
-     print("Welcome to Computer Whisperer\u2122\nI am the computer, you are my muse...well only if you can read my mind\nI'm thinking of a number between 1 and 100, can you guess what it is?\nLevels: 1. Easy, or 2. Hard.\n")
+     print("Welcome to Computer Whisperer\u2122\nI am the computer, you are my muse...well only if you can read my mind ;)\nI'm thinking of a number between 1 and 100, can you guess what it is?\nLevels: 1. Easy, or 2. Hard.\n")
      
      guess_dict = {
           'easy': 10,
@@ -18,13 +18,13 @@ def computer_whisperer():
      print(f"for testing purposes, the number is {computer_number}")
      
      while guess_count > 0:
-          #TODO 5: print the number of guesses the user has remaining
           print(f"You have {guess_count} guesses remaining")
           #TODO 6: ask them to guess
-          user_guess = int(input("Guess a number: "))
-          #TODO 7: check whether they are right or not. If they are wrong, tell them if their guess is too high or too low
+          user_guess = input("Guess a number: ")
+          while not user_guess.isnumeric():
+               user_guess = input("Invalid input! Please guess a number: ")
+          user_guess = int(user_guess)
           if user_guess != computer_number:
-               #TODO 8: ask them to guess again, and decrement their remaining guesses by 1
                if user_guess > computer_number:
                     print("Too high")
                else:
@@ -36,7 +36,7 @@ def computer_whisperer():
                print(f"You got it! The answer was {computer_number}")
                guess_count = -1
 
-     play_again = input("Do you want to play again, type 'yes' or 'no': ")
+     play_again = input("Do you want to play again? Type 'yes' or 'no': ")
      if play_again == 'yes':
           computer_whisperer()
 
