@@ -1,20 +1,15 @@
 
 from art import logo 
 import random
-
+EASY_LEVEL_GUESS = 10
+HARD_LEVEL_GUESS = 5
 def computer_whisperer():
      print(logo)
      print("Welcome to Computer Whisperer\u2122\nI am the computer, you are my muse...well only if you can read my mind ;)\nI'm thinking of a number between 1 and 100, can you guess what it is?\nLevels: 1. Easy, or 2. Hard.\n")
      
-     guess_dict = {
-          'easy': 10,
-          'hard': 5
-     }
-     
      computer_number = random.randint(1,100)
      user_input  = input("Type 1 or 2 to select your difficulty level: ")
-     diff = 'easy' if user_input == '1' else 'hard'
-     guess_count = guess_dict[diff]
+     guess_count = EASY_LEVEL_GUESS if user_input == '1' else HARD_LEVEL_GUESS
      print(f"for testing purposes, the number is {computer_number}")
      
      while guess_count > 0:
