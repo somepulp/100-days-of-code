@@ -25,7 +25,6 @@ def computer_whisperer():
      
      while guess_count > 0:
           print(f"You have {guess_count} guesses remaining")
-          #TODO 6: ask them to guess
           user_guess = input("Guess a number: ")
           while not user_guess.isnumeric():
                user_guess = input("Invalid input! Please guess a number: ")
