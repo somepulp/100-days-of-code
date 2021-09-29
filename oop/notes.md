@@ -1,4 +1,15 @@
-Notes based on: https://www.youtube.com/watch?v=-pEs-Bss8Wc
+Notes based on: https://www.youtube.com/watch?v=-pEs-Bss8Wc, and intro based on https://www.youtube.com/watch?v=qiSCMNBIP2g
+
+# Section 0 - Introduction
+
+Every object has attributes and behaviors. 
+As an object, I know something, as an object, I do something. 
+Objects have someway of storing data (variables). Their behaviour are methods - functions 
+
+Think about multiple objects, and how they can be connected - OOP.
+A class is a design or blueprint of the object. Objects are instances of a class. 
+
+Classes are their own type! Just as an `int` or `str` is its own type. 
 
 ## Section 1 - Classes & Instances
 
@@ -14,7 +25,12 @@ class SoftwareEngineer:
         self.parameter = parameter
     
 ```
-parameter is an instance attribute that is accessible in a certain instance. Class attributes can be used on the class itself - it is the same for each instance. 
+The __init__ method is automatically called each time an instance of a class is created. 
+
+`parameter` is an *instance attribute* that is accessible in a certain instance. 
+Class attributes can be used on the class itself - they are the same for each instance. 
+
+You can use the `type` function to check the class of a variable or object 
 
 Summary:
 - create a class (blueprint)
