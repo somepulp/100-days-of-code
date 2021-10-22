@@ -28,9 +28,9 @@ timmy.reset()
 # Draw a beautiful multishape figure with random colors each time 
 import random 
 screen.colormode(255)
-screen.screensize()
+screen.screensize(2000,2000)
 min_sides = 3 
-max_sides = 10
+max_sides = 30
 FULL_DEGREE = 360
 timmy.pensize(2)
 
@@ -48,7 +48,7 @@ def random_color():
 
 while min_sides != max_sides:
     new_color = random_color()
-    timmy.pencolor(new_color)
+    timmy.color(new_color)
     draw_shape(num_sides=min_sides) 
     min_sides +=1   
 #while num_sides != 4:
