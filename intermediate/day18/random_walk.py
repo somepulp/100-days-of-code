@@ -1,6 +1,6 @@
 from turtle import Turtle, Screen
 import random 
-from multishape import random_color
+from functions import random_color
 
 screen = Screen()
 timmy = Turtle()
