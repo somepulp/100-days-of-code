@@ -1,13 +1,9 @@
-# import colorgram
+from turtle import Turtle, Screen
+import random
 
-# colors = colorgram.extract("/home/joy/Documents/Python Learning/100-days-of-code/intermediate/day18/Ellipticine.png", 30)
-# rgb_colors = []
+brush = Turtle()
+screen = Screen()
 
-# for _ in colors:
-#     rgb_colors.append(tuple(_.rgb))
-
-# print(colors)
-# print(rgb_colors)
 
 colors_list = [(34, 108, 167), (223, 229, 235), (227, 233, 230), (245, 77, 36), (112, 163, 211),
                    (153, 57, 85), (219, 156, 94), (201, 60, 27), (24, 133, 55), (246, 204, 84), 
@@ -19,3 +15,22 @@ colors_list = [(34, 108, 167), (223, 229, 235), (227, 233, 230), (245, 77, 36), 
 # paint a painting with 10 by 10 rows of spots
 # dots 20 in size, spaced apart by 50 paces
 
+# First row: 
+
+screen.colormode(255)
+#screen.screensize(2000,2000)
+screen.setup(width=1, height=1, startx=None, starty=None)
+
+brush.penup()
+brush.setposition(-200, -200)
+start_position = brush.position()
+rows = 10 
+cols = 12 
+for row in range(rows):
+    for col in range(cols):
+        brush.dot(20, random.choice(colors_list))
+        brush.forward(50)
+    brush.setposition(start_position + (0, 50))
+    start_position = brush.position()
+
+screen.exitonclick()
