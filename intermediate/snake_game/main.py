@@ -32,3 +32,7 @@ while game_on:
     snake_body[0].forward(20)
 
 screen.exitonclick()
+
+#TODO: control the snake 
+# first refactoring - create snake class and import it to main.py
+# add method - move 
