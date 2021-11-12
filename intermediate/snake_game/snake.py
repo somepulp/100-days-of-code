@@ -1,4 +1,4 @@
-from turtle import Turtle
+from turtle import Turtle, heading, position
 STARTING_POSITIONS = [(0,0), (-20,0), (-40,0)]
 MOVE_DISTANCE = 20
 UP = 90
@@ -12,16 +12,23 @@ class Snake():
         self.snake_body = []
         self.create_snake()
         self.head = self.snake_body[0]
+        self.tail = self.snake_body[-1]
         
     
     def create_snake(self):    
         for pos in STARTING_POSITIONS:
-            new_leg = Turtle(shape = "square")
-            new_leg.color("white")
-            new_leg.penup()
-            new_leg.goto(pos)
-            self.snake_body.append(new_leg)
-            
+            self.add_leg(pos)
+    
+    def add_leg(self, position):
+        new_leg = Turtle(shape = "square")
+        new_leg.color("white")
+        new_leg.penup()
+        new_leg.goto(position)
+        self.snake_body.append(new_leg)
+        
+    def extend(self):
+        self.add_leg(self.tail.position())
+        
     def move(self):
         for leg_num in range(len(self.snake_body)-1, 0, -1):
             new_x = self.snake_body[leg_num-1].xcor()
