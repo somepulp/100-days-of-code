@@ -9,6 +9,12 @@ screen.tracer(0)
 
 snake = Snake()
 
+screen.listen()
+screen.onkey(fun=snake.up, key="Up")
+screen.onkey(fun=snake.down, key="Down")
+screen.onkey(fun=snake.left, key="Left")
+screen.onkey(fun=snake.right, key="Right")
+
 game_on = True
 
 while game_on:
@@ -17,7 +23,4 @@ while game_on:
 
     snake.move()
 
-
 screen.exitonclick()
-
-#TODO: control the snake 
