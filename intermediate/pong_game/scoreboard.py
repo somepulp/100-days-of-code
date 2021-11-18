@@ -18,11 +18,19 @@ class GameBoard(Turtle):
             self.forward(15)
 
 class Score(Turtle):
-    def __init__(self, xpos, ypos) -> None:
+    def __init__(self, position) -> None:
         super().__init__()
-        self.goto(xpos, ypos)
+        self.goto(position)
         self.color("White")
         self.ht()
         self.score = 0
-        self.write(f"{self.score}", align="center", font=("Bit5x3", 60, "normal"))
+        self.update_score()
+        
+    def update_score(self):
+        self.write(f"{self.score}", align="center", font=("Bit5x3", 60, "normal")) 
+           
+    def increase_score(self):
+        self.clear()
+        self.score += 1
+        self.update_score()
         
