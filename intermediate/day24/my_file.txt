@@ -1,7 +1,1 @@
-Hello, my name is Joy.
-This is why you should close files after opening them in python: 
-Once python opens a file, it takes up resources on your computer.
-It might free up the resources by closing the file later, but there's no expectation as to when that will happen
-To ensure it happens, and free up resources once you're done with the file, you close the file with the file.close() method. 
-
-Using the with keyword, you dont need to remember closing the file. The with keyword manages the file and closes once you're done using it
+Using mode = 'w' overwrites everything in the file with the new text
