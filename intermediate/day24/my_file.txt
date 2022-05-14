@@ -1,1 +1,2 @@
 Using mode = 'w' overwrites everything in the file with the new text
+Using mode = 'a', the new text gets appended to the file, rather than replacing the old contents. Dont forget the newline character, if it's needed ('\n') 
