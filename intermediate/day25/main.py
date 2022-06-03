@@ -26,13 +26,22 @@ print(data_dict)
 temp_list = data['temp'].to_list()
 print(temp_list)
 
-avg_temp = sum(temp_list)/len(temp_list)
+# Getting data in columns
+print(data['condition'])
+print(data.condition)
+print(data['day'])
+print(data.day)
+print(data.temp)
 
-import statistics
 
-avg_temp2 = statistics.mean(temp_list)
+# Getting data in rows
+print(data[data.day == "Monday"])
+print(data[data.temp == data.temp.max()])
 
-print(avg_temp, avg_temp2)
 
-print(data['temp'].mean())
-print(data['temp'].max())
+# Getting cell
+monday = data[data.day == "Monday"]
+print(monday.condition)
+
+monday_tempF = (monday.temp*9/5) + 32
+print(monday_tempF)
