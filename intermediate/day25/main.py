@@ -12,3 +12,10 @@
       
 # print(temperatures)
 
+import pandas as pd 
+
+data = pd.read_csv("./weather_data.csv")
+
+print(type(data)) #2d = Data Frame
+print(type(data['temp'])) #1d = Series = List
+
