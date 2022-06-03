@@ -25,3 +25,14 @@ print(data_dict)
 
 temp_list = data['temp'].to_list()
 print(temp_list)
+
+avg_temp = sum(temp_list)/len(temp_list)
+
+import statistics
+
+avg_temp2 = statistics.mean(temp_list)
+
+print(avg_temp, avg_temp2)
+
+print(data['temp'].mean())
+print(data['temp'].max())
